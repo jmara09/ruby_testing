@@ -70,34 +70,65 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    context 'when step two is 25' do
+      it 'returns 21' do
+        step_two = 25
+        result = game.subtract_four(step_two)
+        expect(result).to eq(21)
+      end
+    end
   end
 
   describe '#divide_by_two' do
+    context 'when step three is 20' do
+      it 'returns 10' do
+        step_three = 20
+        result = game.divide_by_two(step_three)
+        expect(result).to eq(10)
+      end
+    end
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
+  subject(:magic) { MagicSeven.new(3) }
   describe '#subtract_random_number' do
+    context 'when step four is 10' do
+      it 'returns 7' do
+        step_four = 10
+        result = magic.subtract_random_number(step_four)
+        expect(result).to eq(7)
+      end
+    end
   end
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
   describe '#play' do
-    context 'when the random number is ...' do
+    context 'when the random number is 5' do
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        magic = MagicSeven.new(5)
+        result = magic.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 20' do
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        magic = MagicSeven.new(20)
+        result = magic.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 15' do
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        magic = MagicSeven.new(15)
+        result = magic.play
+        expect(result).to eq(7)
       end
     end
   end
